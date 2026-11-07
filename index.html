@@ -571,7 +571,7 @@ document.addEventListener('keydown',e=>{if(e.key=='Enter'&&e.target.id=='amt'&&d
 document.addEventListener('input',e=>{if(e.target.id=='amt'){const el=e.target,pos=el.selectionStart,raw=el.value;let c=raw.slice(0,pos).replace(/[^0-9.]/g,'').length;let t=raw.replace(/[^0-9.]/g,'');const i=t.indexOf('.');if(i>=0)t=t.slice(0,i+1)+t.slice(i+1).replace(/\./g,'').slice(0,2);let ip=i>=0?t.slice(0,i):t;const dp=i>=0?t.slice(i):'';ip=ip.replace(/^0+(?=\d)/,'').replace(/\B(?=(\d{3})+(?!\d))/g,',');const out=ip+dp;el.value=out;let k=0,np=0;while(np<out.length&&k<c){if(/[0-9.]/.test(out[np]))k++;np++}try{el.setSelectionRange(np,np)}catch(x){}}if(e.target.id=='qs'){qs=e.target.value;applyQ()}});
 
 
-const SBU='sb_publishable_Ly5x1pMXpx8rH3sXJnFtFQ_XHc74P1-',SBK='YOUR_SUPABASE_ANON_KEY';
+const SBU='https://abcdefgh.supabase.co',SBK='sb_publishable_Ly5x1pMXpx8rH3sXJnFtFQ_XHc74P1-';
 let sb=null,prof=null,allU=[],gmode='in',catT=null;
 const adminTab=()=>prof&&prof.role=='admin'?[['adm','Admin']]:[];
 const gate=document.createElement('div');gate.id='gate';document.body.appendChild(gate);
